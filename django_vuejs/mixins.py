@@ -3,7 +3,19 @@ from django.conf import settings
 
 
 class VueJS_25_Mixin(object):
+
     @property
     def media(self):
         js = 'js/vue-2.5.17%s.js' % ('' if not settings.DEBUG else '.min')
         return super().media + forms.Media(js=[js])
+
+
+class VueJS_26_Mixin(object):
+    @property
+    def media(self):
+        js = 'js/vue-2.6.11%s.js' % ('' if not settings.DEBUG else '.min')
+        return super().media + forms.Media(js=[js])
+
+
+class VueJSMixin(VueJS_26_Mixin):
+    pass
