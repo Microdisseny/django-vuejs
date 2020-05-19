@@ -23,6 +23,14 @@ class ExampleAdmin(VueJSMixin, admin.ModelAdmin):
 
 ```
 
+## Check code in development
+
+```
+pipenv shell
+pipenv install -r requirements-devel.txt
+. scripts/pre-commit.sh
+```
+
 ## Authors
 
 [<img src="http://www.microdisseny.com/images/web/microdisseny-logo-small.png" width="226">](http://www.microdisseny.com/)
