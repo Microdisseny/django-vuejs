@@ -1,3 +1,4 @@
 include README.md
 include LICENSE.md
 recursive-include django_vuejs/static *
+recursive-include django_vuejs/templates *
