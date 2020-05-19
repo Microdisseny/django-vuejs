@@ -12,7 +12,7 @@ INSTALLED_APPS = (
 )
 ```
 
-Create your Modeladmin
+In a ModelAdmin
 
 ```python
 from django_vuejs.mixins import VueJS_25_Mixin as VueJSMixin
@@ -20,6 +20,17 @@ from django_vuejs.mixins import VueJS_25_Mixin as VueJSMixin
 @admin.register(Example)
 class ExampleAdmin(VueJSMixin, admin.ModelAdmin):
     pass
+
+```
+
+In a template
+```
+{% load django_vuejs %}
+
+{% block extrahead %}
+{{ block.super }}
+{% vuejs_js %}
+{% endblock %}
 
 ```
 
