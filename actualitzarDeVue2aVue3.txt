@@ -1,0 +1,76 @@
+
+Changes to be made when updating Vue version, from Vue 2 to Vue 3
+
+    -   The way which we create a Vue instance
+        has changed:
+
+        // Vue 2
+
+        const app = new Vue({
+            // options object
+            el: '#app'
+        })
+
+        // Vue 3
+
+        const app = Vue.createApp({
+            // options object
+        })
+        app.mount('#app') // Vue Instance - Root component
+
+    -   To define a component:
+
+        // Vue 2
+        Vue.component('component-name', {
+            // component code here
+        })
+
+        // Vue 3
+        const app = Vue.createApp({
+            // options here
+        })
+
+        app.component('componenet-name', {
+            // component code here
+        })
+    
+    - To define the data property you can't do it
+    as an object in Vue 3, we have to define it as
+    a function instead:
+
+    // Vue 2
+    const app = new Vue({
+        // options object
+        el: '#app'
+        data: {
+            message: 'hi there'
+        }
+    })
+
+    // Vue 3
+    const app = Vue.createApp({
+        // options object
+        data(){
+            return {
+                message: 'hi there'
+            }
+        }
+    })
+    app.mount('#app') // Vue Instance - Root component
+
+    - In case you are using Quasar you have to add
+    the Quasar usage like this:
+
+    const app = Vue.createApp({
+        ...
+    })
+
+    app.use(Quasar)
+    app.mount('#q-app')
+
+
+
+To create this guide we took this webpage https://www.freecodecamp.org/news/migrate-from-vue2-to-vue3-with-example-project/
+as reference, check it out to learn more.
+
+
